@@ -1,0 +1,17 @@
+<app-users-filter [filter]='filter'></app-users-filter>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>表示名</th>
+    <th>性別</th>
+    <th>備考</th>
+  </tr>
+  <ng-container *ngFor="let user of getUsers()">
+    <tr *ngIf="isMatched(filter,user.sex)">
+      <td>{{user.id}}</td>
+      <td>{{user.displayname}}</td>
+      <td>{{user.sex}}</td>
+      <td>{{user.note}}</td>
+    </tr>
+  </ng-container>
+  </table>
